@@ -1,0 +1,31 @@
+You might have solved donut using 1D array and now trying to figure out how to convert it into 2D
+Firstly i have made changes in formulas. I don't know how much difference they make than given ones but
+while debugging updated ones worked properly so i didn't tried the given(old/offical) ones against
+you can try these if you want
+
+x : (R2+R1cosθ)(cosBcosϕ-cosAsinBsinϕ)+R1sinAsinBsinθ
+y : (R2+R1cosθ)(cosϕsinB+cosBcosAsinϕ)-R1sinAcosBsinθ
+z : sinA(R2+R1cosθ)sinϕ+R1cosAsinθ
+
+luminance : cosϕcosθsinB−sinAcosθsinϕ−cosAsinθ+cosB(sinAsinθ−cosθcosAsinϕ)
+
+calulate the values of (x,y,z) taking care of presidence. A single missing or additional bracket()
+can change whole formulas
+
+multiply x and y with k1/z+k2 and add some contant value to it.
+THere are no fixed constant values you can different values and add that works.
+Pro tip: the contants in x would be almost double of constant you add in y 
+         and multiply x(only) with 2*k1/z+k2 instead of k1
+
+the would be two arrays one for printing char and one for z-buffer 
+use aactual code in C for reference 
+Now you have idea how to nest and how much to increment phi,theta,a,b.....
+
+add condition(if case) for xprime and yprime to be printed if they are between 0~width and 0~hieght
+respectively. You have to check for zbuff too.
+
+you char 2d array would be like array[hieght][width] and plot points as array[y`][x`]
+not [x`][y`] because first index controls the row (height) and second controls cols(hieght)
+
+obviously i can not share whole code to avoid plagrism however, you can get help in your personal code
+and i will upload whole code to github after deadline for reference.
